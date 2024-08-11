@@ -1,7 +1,7 @@
 // Magnet game - set of # electromagnets that will deactivate in a random order and will release a magnetized content. This will train reaction time and agility.
 // Made by djkim with a help from MichalValkoun
 
-// Constants won't change
+//// Constants: buttons, pins and LED
 const int BUTTON_PIN = 11; // Arduino pin connected to button's pin
 const int ledPin = 10;     // Arduino pin connected to LED's pin
 #define NUM_OF_PINS 8      // number of used pins
@@ -11,27 +11,25 @@ const uint8_t output_pins[NUM_OF_PINS] = {2, 3, 4, 5, 6, 7, 8, 9}; // Put your p
 
 bool button_pressed = false;
 
-// neco jako array
+//// Something like an array
 struct track_of_usage
 {
   uint8_t num;
   bool used;
   track_of_usage(uint8_t num) : num(num), used(false) {}
 };
-
-// buzzer
+//// Buzzer
 #include "pitches.h"
 // notes in the melody:
 int melody[] = {
     NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4};
 
-// note durations: 4 = quarter note, 8 = eighth note, etc.:
+// Note durations: 4 = quarter note, 8 = eighth note, etc.:
 int noteDurations[] = {
 
     4, 8, 8, 4, 4, 4, 4, 4};
 // end of buzzer
-
-// the setup function runs once when you press reset or power the board
+//// Setup
 void setup()
 {                     // initialize digital pin 13 as an output.
   Serial.begin(9600); // initialize serial
@@ -44,7 +42,7 @@ void setup()
   pinMode(ledPin, OUTPUT);           // set arduino pin to output mode
   digitalWrite(ledPin, HIGH);
 }
-
+//// Randomizer
 void random_pin_switch()
 {
   track_of_usage data[NUM_OF_PINS] = {0, 1, 2, 3, 4, 5, 6, 7};
@@ -61,8 +59,7 @@ void random_pin_switch()
     delay(LED_DELAY);
   }
 }
-
-// the loop function runs over and over again forever
+// Loop
 void loop()
 {
   if (!button_pressed && !digitalRead(BUTTON_PIN))
