@@ -11,7 +11,7 @@ const uint8_t output_pins[NUM_OF_PINS] = {2, 3, 4, 5, 6, 7, 8, 9}; // Put your p
 
 bool button_pressed = false;
 
-// neco jako array
+// Someting like an array
 struct track_of_usage
 {
   uint8_t num;
@@ -19,7 +19,7 @@ struct track_of_usage
   track_of_usage(uint8_t num) : num(num), used(false) {}
 };
 
-// buzzer
+// Buzzer
 #include "pitches.h"
 // notes in the melody:
 int melody[] = {
@@ -44,7 +44,7 @@ void setup()
   pinMode(ledPin, OUTPUT);           // set arduino pin to output mode
   digitalWrite(ledPin, HIGH);
 }
-
+// Randomizer
 void random_pin_switch()
 {
   track_of_usage data[NUM_OF_PINS] = {0, 1, 2, 3, 4, 5, 6, 7};
@@ -62,7 +62,7 @@ void random_pin_switch()
   }
 }
 
-// the loop function runs over and over again forever
+// LOOP function
 void loop()
 {
   if (!button_pressed && !digitalRead(BUTTON_PIN))
@@ -96,3 +96,5 @@ void loop()
     button_pressed = false;
   }
 }
+
+// Ending
