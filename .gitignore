@@ -2,13 +2,10 @@ Agility game
 educ8s_menu_reference
 I2C_Scanner
 libraries
-ReactGame
-sketch_brock_string
 sketch_encoder
 sketch_HC-SR04_Ultrasonic_Sensor
 sketch_motion_sensor
 sketch_testing
 sketch_voltage_reader
 Teplomer
-Ultrasound_cane
 VSCODE
