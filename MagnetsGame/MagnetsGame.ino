@@ -1,5 +1,5 @@
 // Magnet game - set of # electromagnets that will deactivate in a random order and will release a magnetized content. This will train reaction time and agility.
-// Made by djkim with a help from MichalValkoun
+// Made by DKim with a help from Michal Valkoun (git/michalvalkoun)
 
 //// Constants: buttons, pins and LED
 const int BUTTON_PIN = 11; // Arduino pin connected to button's pin
@@ -11,7 +11,7 @@ const uint8_t output_pins[NUM_OF_PINS] = {2, 3, 4, 5, 6, 7, 8, 9}; // Put your p
 
 bool button_pressed = false;
 
-//// Something like an array
+//// Array
 struct track_of_usage
 {
   uint8_t num;
@@ -23,12 +23,9 @@ struct track_of_usage
 // notes in the melody:
 int melody[] = {
     NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4};
-
 // Note durations: 4 = quarter note, 8 = eighth note, etc.:
 int noteDurations[] = {
-
     4, 8, 8, 4, 4, 4, 4, 4};
-// end of buzzer
 //// Setup
 void setup()
 {                     // initialize digital pin 13 as an output.
@@ -59,7 +56,7 @@ void random_pin_switch()
     delay(LED_DELAY);
   }
 }
-// Loop
+
 void loop()
 {
   if (!button_pressed && !digitalRead(BUTTON_PIN))
