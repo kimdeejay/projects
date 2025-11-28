@@ -1,16 +1,13 @@
 // Magnet game - set of # electromagnets that will deactivate in a random order and will release a magnetized content. This will train reaction time and agility.
 // Made by DKim with a help from Michal Valkoun (git/michalvalkoun)
 
-//// Constants: buttons, pins and LED
-const int BUTTON_PIN = 11; // Arduino pin connected to button's pin
-const int ledPin = 10;     // Arduino pin connected to LED's pin
-#define NUM_OF_PINS 8      // number of used pins
-#define LED_DELAY 2000     // delay between switching off leds
-
+//// Constants
+const int BUTTON_PIN = 11;                                         // Arduino pin connected to button's pin
+const int ledPin = 10;                                             // Arduino pin connected to LED's pin
+#define NUM_OF_PINS 8                                              // number of used pins
+#define LED_DELAY 2000                                             // delay between switching off leds
 const uint8_t output_pins[NUM_OF_PINS] = {2, 3, 4, 5, 6, 7, 8, 9}; // Put your pins here
-
 bool button_pressed = false;
-
 //// Array
 struct track_of_usage
 {
@@ -28,8 +25,8 @@ int noteDurations[] = {
     4, 8, 8, 4, 4, 4, 4, 4};
 //// Setup
 void setup()
-{                     // initialize digital pin 13 as an output.
-  Serial.begin(9600); // initialize serial
+{
+  Serial.begin(9600);
   for (int i : output_pins)
   {
     pinMode(i, OUTPUT);
