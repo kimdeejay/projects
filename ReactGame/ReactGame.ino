@@ -12,7 +12,6 @@
 #define RES_KEY 9      // reset button
 #define BUZZER_PIN 12  // buzzer
 #define BLINK 300      // 300ms blink time
-
 LiquidCrystal_I2C lcd(0x27, 16, 4);
 const byte ROWS = 4; // four rows
 const byte COLS = 4; // four columns

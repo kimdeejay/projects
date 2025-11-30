@@ -1,5 +1,5 @@
 // Magnet game - set of # electromagnets that will deactivate in a random order and will release a magnetized content. This will train reaction time and agility.
-// Made by DKim with a help from Michal Valkoun (git/michalvalkoun)
+// Made by DKim with a help from Michal Valkoun (@michalvalkoun)
 
 //// Constants
 const int BUTTON_PIN = 11;                                         // Arduino pin connected to button's pin
